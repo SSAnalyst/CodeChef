@@ -1,0 +1,62 @@
+Sample Test 1:
+
+input :-
+4
+3
+3 1 2
+2 4 1
+2
+0 0
+10 10
+4
+5 4 0 2
+3 1 1 0
+5
+0 1 1 2 0
+1 1 0 0 3
+
+output :-
+3
+0
+2
+1
+
+-----------------------------------------------------------------------------------
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class main {
+	public static void main (String[] args) throws java.lang.Exception{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		//int xcount = 0; 
+		//int ycount = 0;
+		while(t >0){
+		    int n = sc.nextInt(); 
+		    int arr [] = new int[n]; 
+		    int prr [] = new int[n]; 
+		    for(int i=0; i<n; i++){
+		        arr[i] = sc.nextInt();
+		    }
+		    for(int j=0; j<n; j++){
+		        prr[j] = sc.nextInt();
+		    }
+		    int current = 0; 
+		    int maxi = 0;
+		    for(int i=0; i<n; i++){
+		        if(arr[i]!=0 && prr[i]!=0){
+		            current += 1;
+		            maxi = Math.max(maxi,current);
+		        }
+		        else{
+		           
+		            current = 0;
+		        }
+		    }
+		    System.out.println(maxi);
+		    t--;
+		}
+	}
+}
